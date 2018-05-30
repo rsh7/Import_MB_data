@@ -38,5 +38,3 @@ with db.engine.begin() as conn:
 			)
 			# SIMILARLY FOR RECORDING AND OTHER TABLES IN MUSICBRAINZ SCHEMA IN AB DATABASE
 			# PROBABLY IT'LL ALSO BE A NEW FUNCTION
-
-# By 30 May, just be able to import the recordings in AB and then later we see other small changes
