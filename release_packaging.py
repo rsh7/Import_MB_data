@@ -14,4 +14,4 @@ with musicbrainz_db.engine.begin() as connection:
                      WHERE release.packaging = :MB_release_data
     """)
     result = connection.execute(query, {"MB_artist_data": MB_artist_data[0][6]})
-    MB_release_status_data = result.fetchall()
+    MB_release_packaging_data = result.fetchall()

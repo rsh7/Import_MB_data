@@ -13,4 +13,4 @@ with musicbrainz_db.engine.begin() as connection:
         "MB_artist_credit_data": MB_artist_data,
     }
     result = connection.execute(query)
-    print(result.fetchall())
+    MB_artist_data = result.fetchall()
