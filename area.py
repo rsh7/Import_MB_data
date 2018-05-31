@@ -27,4 +27,4 @@ with musicbrainz_db.engine.begin() as connection:
  		"MB_artist_data": MB_artist_data,
 	}
  	result = connection.execute(query)
- 	MB_area_data = result.fetchone()
+ 	MB_area_data = result.fetchall()

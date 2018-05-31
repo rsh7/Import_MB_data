@@ -11,11 +11,7 @@ with musicbrainz_db.engine.begin() as connection:
                       FROM release_status
                 INNER JOIN release
                         ON release.status = release_status.id
-                INNER JOIN artist_credit
-                        ON artist_credit.id = release.artist_credit
-                     WHERE artist_credit.id = :MB_artist_data[0]
-    """),{
-        "MB_artist_data": MB_artist_data,
-    }
-    result = connection.execute(query)
+                     WHERE release.status = :MB_release_data
+    """)
+    result = connection.execute(query, {"MB_artist_data": MB_artist_data[0][5]})
     MB_release_status_data = result.fetchall()
