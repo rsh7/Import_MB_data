@@ -2,7 +2,7 @@ from brainzutils import musicbrainz_db
 from sqlalchemy import text
 
 with musicbrainz_db.engine.begin() as connection:
-    query = text("""SELECT area_type.id,
+    area_type_query = text("""SELECT area_type.id,
                            area_type.name,
                            area_type.parent,
                            area_type.child_order,
