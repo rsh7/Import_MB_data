@@ -11,7 +11,7 @@ with musicbrainz_db.engine.begin() as connection:
                       FROM artist_credit_name
                 INNER JOIN artist_credit
                         ON artist_credit_name.artist_credit = artist_credit.id
-                     WHERE artist_credit.id = :MB_artist_data
+                     WHERE artist_credit.id = :MB_artist_credit_data
     """)
-    result = connection.execute(query, {"MB_artist_data": MB_artist_data[0]})
+    result = connection.execute(query, {"MB_artist_credit_data": MB_artist_credit_data[0]})
     MB_artist_credit_name_data = result.fetchall()
