@@ -1,3 +1,5 @@
+# Fetch complete data for this table as foreign keys dependencies weren't an ease.
+
 from brainzutils import musicbrainz_db
 from sqlalchemy import text
 
